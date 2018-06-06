@@ -18,3 +18,7 @@
 Route::get('/', function(){
     return view('index');
 });
+
+Route::get('/dichvu', function(){
+    return view('dichvu');
+});
