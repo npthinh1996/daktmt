@@ -44,13 +44,13 @@
             <div class="modal-body">
                 <form action="" method="post">
                     <div class="form-group row">
-                        <label for="email" class="col-3 col-form-label">Email:</label>
+                        <label for="email" class="col-3 col-form-label">Mã số thuế:</label>
                         <div class="col-9">
                             <input type="email" name="email" id="email" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="password" class="col-3 col-form-label">Password:</label>
+                        <label for="password" class="col-3 col-form-label">Mật khẩu:</label>
                         <div class="col-9">
                             <input type="password" name="password" id="password" class="form-control">
                         </div>
