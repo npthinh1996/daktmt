@@ -4,12 +4,11 @@
 
 <?php
 $info = DB::table('info')->where('mst', session()->get('mst'))->get();
-$service = DB::table('service')->where('mst', session()->get('mst'))->get();
-foreach($info as $row){
-    foreach($row as $key => $value){
-        echo $value;
-    }
-}
+$service = DB::table('service')->join('support', 'sup_id', 'stt')->where('mst', session()->get('mst'))->get();
+
+foreach($info as $infVal){}
+foreach($service as $serVal){}
+
 ?>
 
 <nav class="row px-0 mx-0">
@@ -24,26 +23,26 @@ foreach($info as $row){
     <div class="col-8 col-sm-10 bg-light text-dark rounded">
         <div class="tab-content py-3" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="thongtin" role="tabpanel" aria-labelledby="thongtin-tab">
-                <b>Mã số thuế:</b> 12345 <br><hr>
-                <b>Doanh nghiệp:</b> TNHH 1TV <br><hr>
-                <b>Đại diện:</b> Nguyễn Phước Thịnh <br><hr>
-                <b>Ngày đăng ký:</b> {{date("d/m/Y")}}
+                <b>Mã số thuế:</b> {{$infVal->mst}} <br><hr>
+                <b>Doanh nghiệp:</b> {{$infVal->name}} <br><hr>
+                <b>Đại diện:</b> {{$infVal->person}} <br><hr>
+                <b>Ngày đăng ký:</b> {{$infVal->date}}
             </div>
             <div class="tab-pane fade" id="dichvu" role="tabpanel" aria-labelledby="dichvu-tab">
-                <b>Gói đăng ký:</b> Chuyên nghiệp <br><hr>
-                <b>Hạn dùng:</b> {{date("d/m/Y")}} <br><hr>
-                <b>Thanh toán:</b> 500.000 VNĐ <br><hr>
-                <b>Tình trạng:</b> Hoàn thành
+                <b>Gói đăng ký:</b> {{$serVal->package}} <br><hr>
+                <b>Hạn dùng:</b> {{$serVal->date}} <br><hr>
+                <b>Thanh toán:</b> {{$serVal->cost}} VNĐ <br><hr>
+                <b>Tình trạng:</b> {{$serVal->status}}
             </div>
             <div class="tab-pane fade" id="quanly" role="tabpanel" aria-labelledby="quanly-tab">
-                <b>Nâng cấp:</b> Gói hiện tại <br><hr>
-                <b>Gia hạn:</b> Tự động <br><hr>
+                <b>Nâng cấp:</b> {{$serVal->upgrade}} <br><hr>
+                <b>Gia hạn:</b> {{$serVal->renew}} <br><hr>
                 <a href="#" class="text-danger">Xóa tài khoản</a>
             </div>
             <div class="tab-pane fade" id="hotro" role="tabpanel" aria-labelledby="hotro-tab">
-                <b>Nhân viên:</b> Nguyễn Phước Thịnh <br><hr>
-                <b>Email:</b> npthinh1996@gmail.com <br><hr>
-                <b>Điện thoại:</b> 0989098494
+                <b>Nhân viên:</b> {{$serVal->name}} <br><hr>
+                <b>Email:</b> {{$serVal->email}} <br><hr>
+                <b>Điện thoại:</b> {{$serVal->phone}}
             </div>
         </div>
     </div>

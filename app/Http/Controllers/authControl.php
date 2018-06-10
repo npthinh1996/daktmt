@@ -13,8 +13,8 @@ class authControl extends Controller
         $password = $request['password'];
         if(Auth::attempt(['mst' => $mst, 'password' => $password])){
             session()->put('mst', $mst);
-            return redirect('dashboard');
-        } else return redirect()->back();
+        }
+        return redirect()->back();
     }
 
     public function logout(){

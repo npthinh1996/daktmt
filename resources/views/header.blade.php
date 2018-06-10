@@ -19,10 +19,10 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active"><a href="{{asset('/')}}" class="nav-link">Trang chủ</a></li>
+            <ul class="navbar-nav nav-pills">
+                <li class="nav-item {{$title == 'Trang chủ' ? 'active' : ''}}"><a href="{{asset('/')}}" class="nav-link">Trang chủ</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Giới thiệu</a></li>
-                <li class="nav-item"><a href="dichvu" class="nav-link">Dịch vụ</a></li>
+                <li class="nav-item {{$title == 'Dịch vụ' ? 'active' : ''}}"><a href="dichvu" class="nav-link">Dịch vụ</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Hướng dẫn</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
             </ul>
