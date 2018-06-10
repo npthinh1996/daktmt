@@ -11,7 +11,7 @@
                 <li class="list-group-item">Hệ thống đáp ứng 99%</li>
                 <li class="list-group-item">Công cụ bảo mật</li>
                 <li class="list-group-item">Sao lưu dữ liệu hàng tuần</li>
-                <li class="list-group-item">Hỗ trợ 24/7</li>
+                <li class="list-group-item">Nhân viên riêng hỗ trợ 24/7</li>
             </ul>
             <div class="card-body">
                 <a href="#" class="btn btn-info">Đăng ký</a>
@@ -26,14 +26,14 @@
                 <li class="list-group-item">Hệ thống đáp ứng 99,9%</li>
                 <li class="list-group-item">Công cụ bảo mật hiện đại</li>
                 <li class="list-group-item">Sao lưu dữ liệu hàng ngày</li>
-                <li class="list-group-item">Hỗ trợ 24/7</li>
+                <li class="list-group-item">Nhân viên riêng hỗ trợ 24/7</li>
             </ul>
             <div class="card-body">
                 <a href="#" class="btn btn-success">Đăng ký</a>
             </div>
         </div>
         <div class="card border-danger">
-            <h4 class="card-header bg-danger text-light">Gói Doanh nghiệp</h4>
+            <h4 class="card-header bg-danger text-light">Gói Chuyên nghiệp</h4>
             <div class="card-body">
                 <h5 class="card-title text-center">1.000.000 <sup>VNĐ</sup>/<sub>Tháng</sub></h5>
             </div>

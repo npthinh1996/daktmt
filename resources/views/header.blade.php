@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trang chủ</title>
+    <title>{{$title}}</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -28,7 +28,12 @@
             </ul>
         </div>
         <div class="text-right">
+            @if(session()->has('mst'))
+            <a href="dashboard" class="btn btn-info" title="Trình quản lý">{{session()->get('mst')}}</a>
+            <a href="logout" class="btn btn-info" title="Trình quản lý">Logout</a>
+            @else
             <button class="btn btn-info" data-toggle="modal" data-target="#dangnhapModal">Đăng nhập</button>
+            @endif
         </div>
     </nav>
 </header>
@@ -43,11 +48,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="{{route('login')}}" method="post">
+                    {{csrf_field()}}
                     <div class="form-group row">
-                        <label for="email" class="col-3 col-form-label">Mã số thuế:</label>
+                        <label for="mst" class="col-3 col-form-label">Mã số thuế:</label>
                         <div class="col-9">
-                            <input type="email" name="email" id="email" class="form-control">
+                            <input type="text" name="mst" id="mst" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -58,7 +64,7 @@
                     </div>
                     <div class="text-right">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                        <button type="submit" class="btn btn-info">Xác nhận</button>
+                        <button type="submit" name="submit" class="btn btn-info">Xác nhận</button>
                     </div>
                 </form>
             </div>

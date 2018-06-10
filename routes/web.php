@@ -11,18 +11,20 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function(){
-    return view('index');
+    $val['title'] = 'Trang chủ';
+    return view('index', $val);
 });
 
-Route::get('/dichvu', function(){
-    return view('dichvu');
+Route::get('dichvu', function(){
+    $val['title'] = 'Dịch vụ';
+    return view('dichvu', $val);
 });
 
-Route::get('/dashboard', function(){
-    return view('dashboard');
+Route::get('dashboard', function(){
+    $val['title'] = 'Trình quản lý';
+    return view('dashboard', $val);
 });
+
+Route::post('login', 'authControl@login')->name('login');
+Route::get('logout', 'authControl@logout');

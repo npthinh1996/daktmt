@@ -1,5 +1,17 @@
 @include('header')
 
+@if(session()->has('mst'))
+
+<?php
+$info = DB::table('info')->where('mst', session()->get('mst'))->get();
+$service = DB::table('service')->where('mst', session()->get('mst'))->get();
+foreach($info as $row){
+    foreach($row as $key => $value){
+        echo $value;
+    }
+}
+?>
+
 <nav class="row px-0 mx-0">
     <div class="col-4 col-sm-2 px-0">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -13,13 +25,15 @@
         <div class="tab-content py-3" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="thongtin" role="tabpanel" aria-labelledby="thongtin-tab">
                 <b>Mã số thuế:</b> 12345 <br><hr>
+                <b>Doanh nghiệp:</b> TNHH 1TV <br><hr>
                 <b>Đại diện:</b> Nguyễn Phước Thịnh <br><hr>
                 <b>Ngày đăng ký:</b> {{date("d/m/Y")}}
             </div>
             <div class="tab-pane fade" id="dichvu" role="tabpanel" aria-labelledby="dichvu-tab">
-                <b>Gói đăng ký:</b> Gói doanh nghiệp <br><hr>
+                <b>Gói đăng ký:</b> Chuyên nghiệp <br><hr>
                 <b>Hạn dùng:</b> {{date("d/m/Y")}} <br><hr>
-                <b>Thanh toán:</b> Hoàn thành
+                <b>Thanh toán:</b> 500.000 VNĐ <br><hr>
+                <b>Tình trạng:</b> Hoàn thành
             </div>
             <div class="tab-pane fade" id="quanly" role="tabpanel" aria-labelledby="quanly-tab">
                 <b>Nâng cấp:</b> Gói hiện tại <br><hr>
@@ -34,5 +48,11 @@
         </div>
     </div>
 </nav>
+
+@else
+
+<script>window.location = '/daktmt/public';</script>
+
+@endif
 
 @include('footer')
