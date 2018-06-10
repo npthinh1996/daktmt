@@ -22,3 +22,7 @@ Route::get('/', function(){
 Route::get('/dichvu', function(){
     return view('dichvu');
 });
+
+Route::get('/dashboard', function(){
+    return view('dashboard');
+});
