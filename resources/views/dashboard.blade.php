@@ -37,7 +37,7 @@ foreach($service as $serVal){}
             <div class="tab-pane fade" id="quanly" role="tabpanel" aria-labelledby="quanly-tab">
                 <b>Nâng cấp:</b> {{$serVal->upgrade}} <br><hr>
                 <b>Gia hạn:</b> {{$serVal->renew}} <br><hr>
-                <a href="#" class="text-danger">Xóa tài khoản</a>
+                <a href="#" class="text-danger" style='pointer-events:none'>Xóa tài khoản</a>
             </div>
             <div class="tab-pane fade" id="hotro" role="tabpanel" aria-labelledby="hotro-tab">
                 <b>Nhân viên:</b> {{$serVal->name}} <br><hr>
